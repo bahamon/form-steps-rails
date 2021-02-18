@@ -1,0 +1,82 @@
+<div class="fullscreen fullwidth big _1">
+  <section class="d-table _off fullsize">
+    <div class="d-table-cell _off v-middle">
+      <div class="container m-0-auto p-0">
+        <div class="row m-0">
+          <div class="col-12 col-md-6 offset-md-3 p-0">
+            <div class="d-block">
+                <div class="_form">
+                      <div class="d-block ">
+                        <div class="_f_1">
+                          <div>
+                            <fieldset>
+                              <div class="row">
+                                <div class="col-12">
+                                  <h2 class="fs-title _title _1">¡Ya esta listo!</h2>
+                                  <h3 class="fs-subtitle">Necesitaras este código para poder ingresar al condominio, recuerda enviarlo.</h3>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="field hs-form-field _img_qr">
+                                  	<%= image_tag("qr_code.png") %>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row _share_links">
+                              	<div class="col-4 text-center">
+                              		<a href="#" class="m-0-auto "><i class="bi bi-whatsapp"></i></a>
+                              	</div>
+                              	<div class="col-4 text-center">
+                              		<a href="#" class="m-0-auto "><i class="bi bi-download"></i></a>
+                              	</div>
+                              	<div class="col-4 text-center">
+                              		<a href="#" class="m-0-auto "><i class="bi bi-mailbox"></i></a>
+                              	</div>
+                              </div>
+                              <div class="row">
+                              	<div class="col-12 text-center">
+                              		<%= link_to "Listo!", root_path, class: "action-button" %>
+                              	</div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+        
+    </div>
+  </section>
+</div>
+<style type="text/css">
+	._img_qr img{
+		width: 100%;
+
+	}
+	._share_links a {
+	    color: #686868 !important;
+	    text-align: center;
+	    background: white;
+	    font-size: 2rem;
+	    width: 60px;
+	    height: 60px;
+	    display: block;
+	    margin: 0;
+	    border-radius: 369px;
+	    border: 1px solid #686868;
+	    transition: all .3s ease;
+	}
+	._share_links a:hover {
+		opacity: 0.8;
+		transform: translateY(-2px);
+	}
+	._link._1{
+		color:grey;
+		text-align:center;
+	}
+</style>

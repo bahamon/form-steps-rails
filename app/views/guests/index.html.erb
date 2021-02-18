@@ -1,0 +1,407 @@
+<div class="fullscreen fullwidth big _1">
+  <section class="d-table _off fullsize">
+    <div class="d-table-cell _off v-middle">
+      <div class="container m-0-auto p-0">
+        <div class="row m-0">
+          <div class="col-12 col-md-6 offset-md-3 p-0">
+            <div class="d-block" style="margin-bottom: 50px;">
+                <div class="_form">
+                    <nav class="nav ">
+                      <ul id="progressbar">
+                        <li class="active">Visitante</li>
+                        <li>Visita</li>
+                        <li>Vehículo</li>
+                        <li>Confirmación</li>
+                      </ul>
+                    </nav>  
+                    <%= form_for @guest do |f| %>
+                      <div class="d-block ">
+                        <div class="_f_1">
+                          <div>
+                            <fieldset>
+                              <div class="row">
+                                <div class="col-12">
+                                  <h2 class="fs-title _title _1">Datos del visitante</h2>
+                                  <h3 class="fs-subtitle">Empecemos por lo básico.</h3>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="field hs-form-field">
+                                    <label>Nombre y apellido</label><br />
+                                    <%= f.text_field :fullname, autofocus: true, autocomplete: "Carlos Villa", placeholder: "Carlos Villa", required: true, "data-rule-required": true, "data-msg-required": "Por favor introduce tu nombre completo.", class: "form-control", onkeydown: "javascript:showText();" %>
+                                    <span class="error1" style="display: none;">
+                                        <i class="error-log fa fa-exclamation-triangle"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="field hs-form-field">
+                                    <label>DNI</label><br />
+                                    <%= f.number_field :dni, autocomplete: "999 999 999", placeholder: "999 999 999", required: true, "data-rule-required": true, "data-msg-required": "Por favor introduce tu DNI.", class: "form-control", onkeydown: "javascript:showText();" %>
+                                    <span class="error1" style="display: none;">
+                                        <i class="error-log fa fa-exclamation-triangle"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                                <input type="button" data-page="1" name="next" class="next action-button" value="Siguiente" />
+                                <br>
+                              
+                            </fieldset>
+                            <fieldset>
+                              <div class="row">
+                                <div class="col-12">
+                                  <h2 class="fs-title _title _1">Datos de la visita</h2>
+                                  <h3 class="fs-subtitle">Detalles de tu visita</h3>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="field hs-form-field">
+                                    <div class="custom-control custom-switch">
+                                      <%= f.check_box :car, class: "custom-control-input _1" %>
+                                      <label class="custom-control-label" for="car">¿Vienes en coche?</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="field hs-form-field">
+                                    <div class="custom-control custom-switch">
+                                      <%= f.check_box :fewdays, class: "custom-control-input _1" %>
+                                      <label class="custom-control-label" for="fewdays">Visita de varios días</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12 col-md-6">
+                                  <div class="field hs-form-field">
+                                    <label>Día de inicio</label><br />
+                                    <%= f.text_field :startday, redonly: true, placeholder: "mm/dd/aaaa", class: "form-control datepicker", required: true, "data-rule-required": true, "data-msg-required": "Por favor introduce la fecha de inicio de tu visita." %>
+                                    <span class="error1" style="display: none;">
+                                        <i class="error-log fa fa-exclamation-triangle"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="field hs-form-field">
+                                    <label>Día de fin</label><br />
+                                    <%= f.text_field :endday, redonly: true, placeholder: "mm/dd/aaaa", class: "form-control datepicker", required: true, "data-rule-required": true, "data-msg-required": "Por favor introduce la fecha limite de tu visita." %>
+                                    <span class="error1" style="display: none;">
+                                        <i class="error-log fa fa-exclamation-triangle"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="field hs-form-field">
+                                    <label>Tipo de visita</label><br />
+                                    <%= f.select :classification, [["Social", "Social"], ["Emergencia", "Emergencia"], ["Otro", "Otro"]] %>
+                                    <span class="error1" style="display: none;">
+                                        <i class="error-log fa fa-exclamation-triangle"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                                
+                              <input type="button" data-page="2" name="next" class="next action-button" value="Siguiente" href="#" />
+                              <input type="button" data-page="2" name="previous" class="previous _1" value="Atras" href="#" />
+                              <br>
+                            </fieldset>
+                            <fieldset>
+                              <div class="row">
+                                <div class="col-12">
+                                  <h2 class="fs-title _title _1">¿Qué vehículo usas?</h2>
+                                  <h3 class="fs-subtitle">Especifica tu medio de transporte</h3>
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-12 p-0">
+                                  <div class="field hs-form-field">
+                                    <div class=" _checkbox_2">
+                                      <p class="m-0">
+                                        <label class="_label_radio_button">
+                                          <%= f.radio_button :kindcard, checked: "true", class: "with-gap", name: :kindcard, value: "Automovil" %>
+                                          <span class="_span_radio_button" for="kindcard">Automovil</span>
+                                          <i class="material-icons">directions_car</i>
+                                        </label>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12 p-0">
+                                  <div class="field hs-form-field">
+                                    <div class=" _checkbox_2">
+                                      <p class="m-0">
+                                        <label class="_label_radio_button">
+                                          <%= f.radio_button :kindcard, class: "with-gap", name: :kindcard, value: "Motocicleta" %>
+                                          <span class="_span_radio_button" for="kindcard">Motocicleta</span>
+                                          <i class="material-icons">motorcycle</i>
+                                        </label>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12 p-0">
+                                  <div class="field hs-form-field">
+                                    <div class=" _checkbox_2">
+                                      <p class="m-0">
+                                        <label class="_label_radio_button">
+                                          <%= f.radio_button :kindcard, class: "with-gap", name: :kindcard, value: "Bicicleta" %>
+                                          <span class="_span_radio_button" for="kindcard">Bicicleta</span>
+                                          <i class="material-icons">directions_bike</i>
+                                        </label>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="field hs-form-field">
+                                    <label>Mátricula</label><br />
+                                    <%= f.text_field :idcar, placeholder: "ABC 999", class: "form-control" %>
+                                    <span class="error1" style="display: none;">
+                                        <i class="error-log fa fa-exclamation-triangle"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <input type="button" data-page="3" name="next" class="next action-button" value="Siguiente" href="#" />
+                              <input type="button" data-page="3" name="previous" class="previous  _1" value="Atras" href="#" />
+                              <br>
+                            </fieldset>
+                            <fieldset>
+                              <a class="previous fullwidth _data_confirmation" name="previous" data-page="1">
+                                <div class="row">
+                                  <div class="col-11">
+                                    <h3 id="guest_fullname_show"></h3>
+
+                                    <sub>DNI</sub>
+                                    <p id="guest_dni_show"></p>
+                                  </div>
+                                  <div class="col-1 p-0">
+                                    <i class="material-icons">create</i>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="field hs-form-field">
+                                      <div class="custom-control custom-switch d-none" id="ifcar">
+                                        <input type="checkbox" id="guest_car_show" class="custom-control-input _1" disabled >
+                                        <label class="custom-control-label" for="car">Vehículo</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="field hs-form-field">
+                                      <div class="custom-control custom-switch d-none" id="iffewdays">
+                                        <input type="checkbox" id="guest_fewdays_show" class="custom-control-input _1" disabled >
+                                        <label class="custom-control-label" for="car">Visita de varios días</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="field hs-form-field">
+                                      <div class="d-none _transport_confirm pl-3 pr-3" id="if_carro">
+                                        <div class="row">
+                                          <div class="col-2 p-0">
+                                            <i class="material-icons">directions_car</i>
+                                          </div>
+                                          <div class="col-10">
+                                            <label>Automovil</label>
+                                            <p id="guest_idcar_show"></p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="d-none _transport_confirm pl-3 pr-3" id="if_moto">
+                                        <div class="row">
+                                          <div class="col-2 p-0">
+                                            <i class="material-icons">motorcycle</i>
+                                          </div>
+                                          <div class="col-10">
+                                            <label>Motocicleta</label>
+                                            <p id="guest_idcar_show_2"></p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="d-none _transport_confirm pl-3 pr-3" id="if_bike">
+                                        <div class="row">
+                                          <div class="col-2 p-0">
+                                            <i class="material-icons">directions_bike</i>
+                                          </div>
+                                          <div class="col-10">
+                                            <label>Bicicleta</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                              <hr>
+                              <h4>Acompañantes</h4>
+                              <br>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="form-group form_group_number">
+                                          <span class="input-number-decrement btn btn_number_left">–</span>
+                                          <%= f.text_field :companions, class: "input_1 input-number input-number_companions", id: "companions", min: "0", max: "50", placeholder: "0" %>
+                                          <span class="input-number-increment btn btn_number_right">+</span>
+                                      
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="field hs-form-field">
+                                      <div class="custom-control custom-switch">
+                                        <%= f.check_box :fav, class: "custom-control-input _1" %>
+                                        <label class="custom-control-label" for="car">Recordar en favoritos</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <br>
+                              <%= f.submit "Continuar", class: "fullwidth action-button _showdata" %>
+                              <br>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+        
+    </div>
+  </section>
+</div>
+<script type="text/javascript">
+
+  // Deshabilitacion dias de conflicto
+  var dateToday = new Date();
+  var dates = $("#guest_startday, #guest_endday").datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      minDate: dateToday,
+      onSelect: function(selectedDate) {
+          var option = this.id == "guest_startday" ? "minDate" : "maxDate",
+              instance = $(this).data("datepicker"),
+              date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+          dates.not(this).datepicker("option", option, date);
+      }
+  });
+    
+
+  /* FORMDATA 
+
+    const objectFromFormData = function(formData) {
+    var values = {};
+    for (var pair of formData.entries()) {
+      var key = pair[0];
+      var value = pair[1];
+      if (values[key]) {
+        if ( ! (values[key] instanceof Array) ) {
+          values[key] = new Array(values[key]);
+        }
+        values[key].push(value);
+      } else {
+        values[key] = value;
+      }
+    }
+    return values;
+  }
+
+  document.querySelector('._showdata')
+  .addEventListener('click', function(e) {
+    e.preventDefault();
+    const form = new FormData(document.forms['new_guest']);
+    preview(form);
+  });
+
+
+  function replacer(key, value)  {
+    if (value instanceof File) {
+      return ['name', 'size', 'type'].reduce(function(acc, key) {
+        acc[key] = replacer(key, value[key]);
+        return acc;
+      }, {});
+    }
+    return value;
+  }
+
+  function preview(form) {
+    var data = document.querySelector('#data')
+    var txt = JSON.stringify(
+      objectFromFormData(form),
+      replacer, 2);
+    data.innerHTML = txt;
+    // data.classList.remove('hidden');
+    // data.scrollIntoView();
+  }*/
+</script>
+<script type="text/javascript">
+  (function() {
+ 
+    window.inputNumber = function(el) {
+
+      var min = el.attr('min') || false;
+      var max = el.attr('max') || false;
+
+      var els = {};
+
+      els.dec = el.prev();
+      els.inc = el.next();
+
+      el.each(function() {
+        init($(this));
+      });
+
+      function init(el) {
+
+        els.dec.on('click', decrement);
+        els.inc.on('click', increment);
+
+        function decrement() {
+          var value = el[0].value;
+          value--;
+          if(!min || value >= min) {
+            el[0].value = value;
+          }
+        }
+
+        function increment() {
+          var value = el[0].value;
+          value++;
+          if(!max || value <= max) {
+            el[0].value = value++;
+          }
+        }
+      }
+    }
+  })();
+
+  inputNumber($('.input-number_companions'));
+</script>
